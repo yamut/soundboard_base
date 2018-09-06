@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Eli Soundboard</string>
+    <string name="file_name_without_extension">Display name</string>
+</resources>
