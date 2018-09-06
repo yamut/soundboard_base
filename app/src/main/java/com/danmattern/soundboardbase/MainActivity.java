@@ -38,7 +38,15 @@ public class MainActivity extends AppCompatActivity {
         this.clips = new ArrayList<>();
         ArrayList<String> files = getRawFileList();
         for (String file : files) {
-            this.clips.add(new ClipEntry(file));
+            String display_name = "";
+            try {
+                display_name = getResources()
+                        .getString(getResources()
+                                .getIdentifier(file, "string", getPackageName()));
+            } catch (RuntimeException e) {
+                // Don't do anything
+            }
+            this.clips.add(new ClipEntry(file, display_name));
         }
         listView = (ListView) findViewById(R.id.listView);
         final ClipAdapter clipAdapter = new ClipAdapter(MainActivity.this, R.layout.list_record, this.clips);

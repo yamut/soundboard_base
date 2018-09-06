@@ -5,37 +5,37 @@ package com.danmattern.soundboardbase;
  */
 
 public class ClipEntry {
-	private String id;
-	private String tag;
-	private String textLabel;
+    private String id;
+    private String tag;
+    private String textLabel;
 
-	public String getId () {
-		return id;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public void setId (String id) {
-		this.id = id;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public String getTag () {
-		return tag;
-	}
+    public String getTag() {
+        return tag;
+    }
 
-	public void setTag (String tag) {
-		this.tag = tag;
-	}
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
 
-	public String getTextLabel () {
-		return textLabel;
-	}
+    public String getTextLabel() {
+        return textLabel;
+    }
 
-	public void setTextLabel (String textLabel) {
-		this.textLabel = textLabel;
-	}
+    public void setTextLabel(String textLabel) {
+        this.textLabel = textLabel;
+    }
 
-	public ClipEntry (String id) {
-		this.id = id;
-		this.tag = id;
-		this.textLabel = id.replace('_', ' ');
-	}
+    public ClipEntry(String id, String mapName) {
+        this.id = id;
+        this.tag = id;
+        this.textLabel = (mapName.length() == 0) ? id.replace('_', ' ') : mapName;
+    }
 }
